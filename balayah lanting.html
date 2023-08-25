@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Wislamanku</title>
+</head>
+<body>
+
+    <center><h2>Balayah Lanting</h2></center>
+
+<div class="responsive">
+  <div class="img">
+    
+      <img src="images/Balayah-Lanting.jpg" alt="dumetschool-1" width="300" height="200">
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="img">
+    
+      <img src="images/Balayah-Lanting1.jpg" alt="dumetschool-2" width="600" height="400">
+    
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="img">
+    
+      <img src="images/Balayah-Lanting2.jpg" alt="dumetschool-3" width="600" height="400">
+
+    
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="img">
+    
+      <img src="images/Balayah-Lanting3.jpg" alt="dumetschool-4" width="600" height="400">
+  
+    
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+</body>
+</html>
+<p align="justify">Festival Balayah Lanting merupakan event tahunan yang diselenggarakan di Kecamatan Delang dengan berbagai kegiatan yang digelar seperti fun trekking menuju air terjun tambai Desa Penyombaan, fun camping, pentas seni dan budaya, dan bamboo rafting yang dimulai dari Desa Lopus dan berakhir di Desa Riam Tinggi. Festival Balayah Lanting bertujuan untuk meningkatkan kerjasama dan kebersamaan masyarakat Delang dengan masyarakat luar dalam serta memperkenalkan kearifan lokal. 
+Festival Balayah Lanting ini akan memberi dampak positif terhadap perkembanganKecamatan Delang,selain meningkatkan jumlah pengunjung dan memberi motivasi kepada masyarakat untuk lebih kreatif dan inovatif, perekonomian Kecamatan Delang juga akan meningkat, untuk itu Balayah Lanting menjadi kesempatan dinas pariwisata untuk mengembangkan wisata di Lamandau terutama wilayah Delang.
+</p>
+
+
+
+ <a href="index.html">Kembali</a>
+
+
+<style>
+ 
+.img {
+    border: 1px solid #778899; 
+}
+/*Memberikan efek pada saat pointer di tujukan ke image*/
+.img:hover {
+    border: 1px solid black; 
+}
+/*Membuat lebar sesuai dengan ukuran lebar class responsive*/
+.img img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+/*membuat box-size pada body*/
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+/*berfungsi untuk mengubah style class responsive pada lebar maksimum 700px*/
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+/*berfungsi untuk mengubah style class responsive pada lebar maksimum 500px*/
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+/*clearfix adalah cara praktis yang digunakan untuk clear element yang sebelumnya mengalami float*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Wislamanku</title>
+</head>
+<body>
+
+    <center><h2>Sei Sitongah</h2></center>
+
+<div class="responsive">
+  <div class="img">
+    
+      <img src="images/sei-sitongah.jpg" alt="dumetschool-1" width="300" height="200">
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="img">
+    
+      <img src="images/sei-sitongah1.jpg" alt="dumetschool-2" width="600" height="400">
+    
+  </div>
+
+</div>
+
+<div class="clearfix"></div>
+
+</body>
+</html>
+<p align="justify">Sei Sitongah merupakan aliran air sungai Delang. Daya tarik wisata yang ditawarkan adalah keindahan sungai yang memiliki banyak bebatuan, airnya yang jernih, ditambah dengan pemandangan hutan yang rimbun. Selain menikmati keindahannya, wisatawan juga bisa berenang dan menaiki rakit untuk menyeberangi sungai. Sungai ini juga bisa dinikmati tidak jauh dari pinggir jalan raya lintas provinsi karena letaknya yang tepat berada dibawah jalan raya tersebut.</p>
+
+<p align="justify">Akses menuju Sei Sitongah dapat ditempuh melalui transportasi darat dengan waktu ± 2 jam dari kota Nanga Bulik dengan kondisi jalan sudah beraspal. Dari pintu masuk hanya membutuhkan waktu 15 menit untuk sampai di tempat wisata ini.</p>
+
+<br><p align="justify"><b>Harga Tiket : Rp5.000,-  (Harga Bisa Berubah Tergantung Event)
+<br>Perjalanan dari Kota ± 2 Jam.</b></p> 
+
+<br><a href="index.html">Kembali</a>
+
+
+<style>
+      
+.img {
+    border: 1px solid #778899; 
+}
+/*Memberikan efek pada saat pointer di tujukan ke image*/
+.img:hover {
+    border: 1px solid black; 
+}
+/*Membuat lebar sesuai dengan ukuran lebar class responsive*/
+.img img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+/*membuat box-size pada body*/
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+/*berfungsi untuk mengubah style class responsive pada lebar maksimum 700px*/
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+/*berfungsi untuk mengubah style class responsive pada lebar maksimum 500px*/
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+/*clearfix adalah cara praktis yang digunakan untuk clear element yang sebelumnya mengalami float*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
