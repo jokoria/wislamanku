@@ -1,117 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riam Arum Jeram</title>
- <link rel="shortcut icon" href="images/wis.png">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="lightbox.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riam Arum Jeram | Wislamanku</title>
+    <link rel="shortcut icon" href="images/wis.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <style>
+        :root {
+            --primary: #1a5d1a;
+            --accent: #27ae60;
+            --dark: #121212;
+            --text-gray: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8fbf8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Background Moving untuk area teks */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header / Hero Area */
+        .hero-title {
+            padding: 100px 5% 50px;
+            text-align: center;
+            background: linear-gradient(-45deg, #e8f5e9, #f1f8e9, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        .hero-title h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero-title p {
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        /* Gallery Container */
+        .container {
+            padding: 20px 8% 60px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .gallery a {
+            position: relative;
+            display: block;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .gallery a:hover {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Overlay icon pada gambar */
+        .gallery a::after {
+            content: "\f067";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .gallery a:hover::after {
+            opacity: 1;
+        }
+
+        /* Content Area */
+        .content-section {
+            background: white;
+            padding: 80px 15%;
+            line-height: 1.8;
+            border-radius: 50px 50px 0 0;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.03);
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-section em {
+            font-style: normal;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            text-align: justify;
+            display: block;
+        }
+
+        .info-card {
+            background: #f0f7f0;
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 0 15px 15px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Navigation Button */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            background: white;
+        }
+
+        .btn-kembali {
+            text-decoration: none;
+            color: white;
+            background: var(--dark);
+            padding: 15px 40px;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-kembali:hover {
+            background: var(--primary);
+            transform: translateX(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            padding: 40px 15%;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .content-section { padding: 50px 8%; }
+            .hero-title { padding-top: 60px; }
+        }
+    </style>
 </head>
-    <body>    
+<body>
+
+    <header class="hero-title">
+        <p>DESTINASI ADRENALIN</p>
+        <h1>Riam Arung Jeram</h1>
+    </header>
+
     <div class="container">
         <div class="gallery">
-            <a href="images/arung-jeram-riam-tinggi.jpg" data-lightbox="models" data-title="Slide 1">
-            <img src="images/arung-jeram-riam-tinggi.jpg">
+            <a href="images/arung-jeram-riam-tinggi.jpg" data-lightbox="adventure" data-title="Keseruan Arung Jeram">
+                <img src="images/arung-jeram-riam-tinggi.jpg" alt="Slide 1">
             </a>
-            <a href="images/arung-jeram-riam-tinggi1.jpg" data-lightbox="models" data-title="Slide 2">
-            <img src="images/arung-jeram-riam-tinggi1.jpg">
+            <a href="images/arung-jeram-riam-tinggi1.jpg" data-lightbox="adventure" data-title="Pemandangan Sungai Delang">
+                <img src="images/arung-jeram-riam-tinggi1.jpg" alt="Slide 2">
             </a>
-            <a href="images/arung-jeram-riam-tinggi2.jpg" data-lightbox="models" data-title="Slide 3">
-            <img src="images/arung-jeram-riam-tinggi2.jpg">
+            <a href="images/arung-jeram-riam-tinggi2.jpg" data-lightbox="adventure" data-title="Aksi Tim Rafting">
+                <img src="images/arung-jeram-riam-tinggi2.jpg" alt="Slide 3">
             </a>
-            <a href="images/arung-jeram-riam-tinggi3.jpg" data-lightbox="models" data-title="Slide 4">
-            <img src="images/arung-jeram-riam-tinggi3.jpg">
-            </a>   
+            <a href="images/arung-jeram-riam-tinggi3.jpg" data-lightbox="adventure" data-title="Hutan Hujan Tropis">
+                <img src="images/arung-jeram-riam-tinggi3.jpg" alt="Slide 4">
+            </a>
         </div>
     </div>
-        
-    <div class="text">
-        <em>Arung jeram adalah suatu aktifitas pengarungan bagian alur sungai yang berjeram/riam, dengan menggunakan wahana tertentu. Pengertian wahana dalam pengarungan sungai berjeram / riam yaitu sarana / alat yang terdiri dari perahu karet, kayak, kano dan dayung. Tujuan berarung jeram bisa dilihat dari sisi olah raga, rekreasi dan ekspedisi. Jadi dengan demikian kita dapat definisikan bahwa olah raga Arung Jeram (White Water Rafting) merupakan olah raga mengarungi sungai berjeram, dengan menggunakan perahu karet, kayak, kano dan dayung dengan tujuan rekreasi atau ekspedisi. Sungai Delang yang memiliki struktur riam bebatuan, dengan kontur sungai seperti ini sangat cocok untuk melakukan kegiatan Wisata Air seperti Rafting, River Tubing, Body Rafting, Kayak dan Kano. Arung Jeram di Desa Riam Tinggi adalah Atraksi menyusuri Sungai Delang dengan menggunakan perahu karet,pengunjung akan dimanjakan dengan rimbunnya hamparan hutan hujan tropis di kiri kanan sungai dan jika beruntung anda bisa bertemu dengan hewan primata seperti monyet, kera, beruk, bekantan, kelasi, bahkan orang utan yang selalu menjadi primadona, banyak kegiatan yang bisa dilakukan selama mengikuti Arung Jeram. Durasi Atraksi Arung Jeram Riam Tinggi ± 1.5 – 2 jam tergantung kondisi air sungai.
 
-        Wisata ini berada di Desa Riam Tinggi, Kecamatan Delang, Kabupaten Lamandau. Membutuhkan waktu ± 2 jam dari kota Nanga Bulik menuju Kecamatan Delang melalui jalur darat dengan kondisi jalan yang telah beraspal. Bagi wisatawan yang ingin melakukan kegiatan arung jeram ini bisa datang langsung ke Kantor Pemerintah Desa atau memesan terlebih dahulu agar pihak Desa Riam Tinggi bisa menyiapkan peralatan yang diperlukan terlebih dahulu, selain itu cuaca juga menentukan wisata ini dapat dilakukan atau tidak.
-
-
+    <section class="content-section">
+        <em>
+            Arung jeram adalah suatu aktifitas pengarungan bagian alur sungai yang berjeram/riam, dengan menggunakan wahana tertentu seperti perahu karet, kayak, kano, dan dayung. Di Desa Riam Tinggi, atraksi ini bukan sekadar olahraga, melainkan perjalanan menyusuri Sungai Delang yang asri. 
+            <br><br>
+            Selama pengarungan selama <strong>1.5 hingga 2 jam</strong>, mata Anda akan dimanjakan rimbunnya hamparan hutan hujan tropis. Jika beruntung, primata eksotis seperti Bekantan, Kelasi, hingga Orang Utan akan menyapa dari dahan pepohonan. Struktur riam bebatuan Sungai Delang menjadikannya spot sempurna untuk Rafting, River Tubing, hingga Body Rafting.
         </em>
-        </div>
-           
-      <div class="kembali">
-           <a style="text-decoration:none;  color: white; font-family: cursive;" href="index.html"> K e m b a l i </a>
-     </div>
-        
-        <div class="footer">
-          <em>Hak Cipta Jokoria, S.Kom / Data Asli dari Dispar Kabupaten Lamandau</em>
-        </div>
-        
-    <script src="lightbox-plus-jquery.js"></script>
 
-<style>
-*{
-margin: auto;
-padding: 0;
-box-sizing: border-box;
-font-family: 'poppons', sans-serif;
-}
-.text{
-    background-color: ghostwhite;
-    width: 100%;
-    min-height: 40vh;
-    display: flex;
-    text-align: justify;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 15%;
-    font-size: 20px;
-   
-}
-    
-.kembali{
-    background-color: gray;
-    width: 29%;
-    padding: 5px;
-    display: flex;
-    margin-bottom: 20px;
-    text-align: center;
-    border-style: solid;
-    border-radius: 5px;
-    font-size: 20px;
-    justify-content: center;
-    font-weight: bold;
-    text-decoration: none;
-    
-}    
-.footer{
-    background-color: black;
-    width: 100%;
-    min-height: 10vh;
-    display: flex;
-    text-align: justify;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 15%;
-    color: blanchedalmond;
-    font-size: 15px;
-    
-}
-    
-.container{
-    background-color: black;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 8%;
-}
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-    grid-gap: 20px;
-    border-radius: 10px;
-}
-.gallery img{
-    width: 100%;
-    border-radius: 10px;
-}</style>
-       
+        <div class="info-card">
+            <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fa fa-map-marker-alt"></i> Lokasi & Akses</h4>
+            Terletak di Desa Riam Tinggi, Kec. Delang. Berjarak ± 2 jam dari Nanga Bulik via jalur darat beraspal. Disarankan memesan melalui Pemerintah Desa setempat sebelum kedatangan untuk memastikan ketersediaan alat dan memantau kondisi cuaca/debit air.
+        </div>
+    </section>
+
+    <div class="navigation">
+        <a href="index.html" class="btn-kembali">
+            <i class="fa fa-arrow-left"></i> K E M B A L I
+        </a>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Hak Cipta <strong>Jokoria, S.Kom</strong> | Data Resmi Dinas Pariwisata Kab. Lamandau</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script>
+        // Opsi Lightbox
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'albumLabel': "Gambar %1 dari %2"
+        })
+    </script>
 </body>
 </html>

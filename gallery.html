@@ -1,275 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Gallery</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-       <link rel="shortcut icon" href="images/wis.png">
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- owl stylesheets --> 
-      <link rel="stylesheet" href="css/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-       <link rel="stylesheet" href="lightbox.css">
-   </head>
-   <body>
-      <!--header section start -->
-         <div class="header_section">
-         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="Tentang%20Wislamanku.html">Tentang Wislamanku</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                     </li>
-                   
-                  </ul>
-               </div>
-            </nav>
-         </div>
-      </div>
-       
-       
-       
-       
-      <!--header section end -->
-      <!-- gallery section start -->
-      <div class="gallery_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-sm-12">
-                  <h1 class="gallery_taital">Tentang Gallery</h1>
-                  
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery | Wislamanku</title>
+    
+    <link rel="shortcut icon" href="images/wis.png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="lightbox.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #444;
+        }
+
+        /* Hero Header - Disamakan dengan halaman Tentang */
+        .about-hero {
+            background: linear-gradient(rgba(30, 81, 40, 0.85), rgba(30, 81, 40, 0.85)), url('images/bg-gallery.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 60px;
+            color: white;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+        }
+
+        .about-hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        /* Nav Filter - Disamakan dengan gaya Nav Pills */
+        .nav-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            gap: 10px;
+        }
+
+        .btn-filter {
+            background: white;
+            border: none;
+            color: #1e5128;
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 12px 25px;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+
+        .btn-filter.active, .btn-filter:hover {
+            background-color: #1e5128 !important;
+            color: white !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(30, 81, 40, 0.2);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 25px;
+            padding-bottom: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            height: 280px;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Caption Overlay */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(30, 81, 40, 0.9));
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .overlay h4 {
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .copyright_section {
+            background: #111;
+            color: #888;
+            padding: 30px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about-hero">
+        <div class="container">
+            <h1>Gallery Wisata</h1>
+            <p class="lead mx-auto" style="max-width: 700px; opacity: 0.9;">
+                Kumpulan momen indah dan potret keunikan destinasi di Kabupaten Lamandau.
+            </p>
+            <div class="mt-4">
+                <a href="index.html" class="btn btn-outline-light rounded-pill px-4 me-2">Beranda</a>
+                <a href="Tentang%20Wislamanku.html" class="btn btn-light rounded-pill px-4">Tentang Kami</a>
             </div>
-            
-        <div class="gallery">
-            <!--ARUM JERAM -->
-            <a href="images/arung-jeram-riam-tinggi.jpg" data-lightbox="models" data-title="Arung Jeram Riam Tinggi_1">
-            <img src="images/arung-jeram-riam-tinggi.jpg">
-            </a>
-            <a href="images/arung-jeram-riam-tinggi1.jpg" data-lightbox="models" data-title="Arung Jeram Riam Tinggi_2">
-            <img src="images/arung-jeram-riam-tinggi1.jpg">
-            </a>
-            <a href="images/arung-jeram-riam-tinggi2.jpg" data-lightbox="models" data-title="Arung Jeram Riam Tinggi_3">
-            <img src="images/arung-jeram-riam-tinggi2.jpg">
-            </a>
-            <a href="images/arung-jeram-riam-tinggi3.jpg" data-lightbox="models" data-title="Arung Jeram Riam Tinggi_4">
-            <img src="images/arung-jeram-riam-tinggi3.jpg">
-            </a>   
-                 
-             <!--Wahana-swafoto -->
-            <a href="images/Wahana-swafoto.jpg" data-lightbox="models" data-title="Wahana-Swafoto_1">
-            <img src="images/Wahana-swafoto.jpg">
-            </a>
-            <a href="images/Wahana-swafoto1.jpg" data-lightbox="models" data-title="Wahana-Swafoto_2">
-            <img src="images/Wahana-swafoto1.jpg">
-            </a>
-            <a href="images/Wahana-swafoto2.jpg" data-lightbox="models" data-title="Wahana-Swafoto_3">
-            <img src="images/Wahana-swafoto2.jpg">
-            </a>
-            <a href="images/Wahana-swafoto3.jpg" data-lightbox="models" data-title="Wahana-Swafoto_4">
-            <img src="images/Wahana-swafoto3.jpg">
-            </a> 
-            
-            
-             <!--sei situngah -->
-            <a href="images/sei-sitongah.jpg" data-lightbox="models" data-title="Sei-Sitongah_1">
-            <img src="images/sei-sitongah.jpg">
-            </a>
-            <a href="images/sei-sitongah1.jpg" data-lightbox="models" data-title="Sei-Sitongah_2">
-            <img src="images/sei-sitongah1.jpg">
-            </a>
-            
-            
-             <!--silikan tambai -->
-            <a href="images/silikan-tambai.jpg" data-lightbox="models" data-title="Silikan-Tambai_1">
-            <img src="images/silikan-tambai.jpg">
-            </a>
-            <a href="images/silikan-tambai1.jpg" data-lightbox="models" data-title="Silikan-Tambai_2">
-            <img src="images/silikan-tambai1.jpg">
-            </a>
-            <a href="images/silikan-tambai2.jpg" data-lightbox="models" data-title="Silikan-Tambai_3">
-            <img src="images/silikan-tambai2.jpg">
-            </a>
-            <a href="images/silikan-tambai3.jpg" data-lightbox="models" data-title="Silikan-Tambai_4">
-            <img src="images/silikan-tambai3.jpg">
-            </a>
-            
-            
-              <!--festival babukung -->
-            <a href="images/festival-babukung1.jpg" data-lightbox="models" data-title="Festival-Babukung_1">
-            <img src="images/festival-babukung1.jpg">
-            </a>
-            <a href="images/festival-babukung.jpg" data-lightbox="models" data-title="Festival-Babukung_2">
-            <img src="images/festival-babukung.jpg">
-            </a>
-            <a href="images/festival-babukung2.jpg" data-lightbox="models" data-title="Festival-Babukung_3">
-            <img src="images/festival-babukung2.jpg">
-            </a>
-            <a href="images/festival-babukung3.jpg" data-lightbox="models" data-title="Festival-Babukung_4">
-            <img src="images/festival-babukung3.jpg">
-            </a>
-            
-            
-               <!--BALAYAH LANTING -->
-            <a href="images/Balayah-Lanting.jpg" data-lightbox="models" data-title="Balayah-Lanting_1">
-            <img src="images/Balayah-Lanting.jpg">
-            </a>
-            <a href="images/Balayah-Lanting1.jpg" data-lightbox="models" data-title="Balayah-Lanting_2">
-            <img src="images/Balayah-Lanting1.jpg">
-            </a>
-            <a href="images/Balayah-Lanting2.jpg" data-lightbox="models" data-title="Balayah-Lanting_3">
-            <img src="images/Balayah-Lanting2.jpg">
-            </a>
-            <a href="images/Balayah-Lanting3.jpg" data-lightbox="models" data-title="Balayah-Lanting_4">
-            <img src="images/Balayah-Lanting3.jpg">
-            </a>
-            
-            
-             <!--air terjun kakap kekelawar -->
-            <a href="images/air%20terjun%20kakap%20kelelawar.png" data-lightbox="models" data-title="Air Terjun Kakap Kelelawar_1">
-            <img src="images/air%20terjun%20kakap%20kelelawar1.png">
-            </a>
-            
-            
-             <!--Baban laman -->
-            <a href="images/baban%20laman.png" data-lightbox="models" data-title="Baban Laman_1">
-            <img src="images/baban%20laman.png">
-            </a>
-            <a href="images/baban%20laman1.png" data-lightbox="models" data-title="Baban Laman_2">
-            <img src="images/baban%20laman1.png">
-            </a>
-            
-            <!--Bangunan Jurung -->
-            <a href="images/Bangunan%20Jurung.png" data-lightbox="models" data-title="Bangunan Jurung_1">
-            <img src="images/Bangunan%20Jurung.png">
-            </a>
-            <a href="images/Bangunan%20Jurung1.png" data-lightbox="models" data-title="Bangunan Jurung_2">
-            <img src="images/Bangunan%20Jurung1.png">
-            </a>
-            
-            <!--Batu batungkat -->
-            <a href="images/batu%20batungkat.png" data-lightbox="models" data-title="Batu Batungkat">
-            <img src="images/batu%20batungkat.png">
-            </a>
-            
-            <!--Bukit Sebayang -->
-            <a href="images/bukit%20sebayan%20bunsu.png" data-lightbox="models" data-title="Bukit Sebayang Bunsu">
-            <img src="images/bukit%20sebayan%20bunsu.png">
-            </a>
-            
-            <!--riam batu rajo -->
-            <a href="images/riam%20batu%20rajo.png" data-lightbox="models" data-title="Riam Batu Rajo_1">
-            <img src="images/riam%20batu%20rajo.png">
-            </a>
-            <a href="images/riam%20batu%20rajo1.png" data-lightbox="models" data-title="Riam Batu Rajo_2">
-            <img src="images/riam%20batu%20rajo1.png">
-            </a>
-            
-            
-            <!--Bagondang -->
-            <a href="images/bagondang.png" data-lightbox="models" data-title="Bagondang_1">
-            <img src="images/bagondang.png">
-            </a>
-            <a href="images/bagondang1.png" data-lightbox="models" data-title="Bagondang_2">
-            <img src="images/bagondang1.png">
-            </a>
-            
-            <!--silikan poring -->
-            <a href="images/silikan%20poring.png" data-lightbox="models" data-title="Silikan Poring">
-            <img src="images/silikan%20poring.png">
-            </a>
-            
-            <!--silikan sengkilipan -->
-            <a href="images/silikan%20sengilipan.png" data-lightbox="models" data-title="Silikan Sengilipan">
-            <img src="images/silikan%20sengilipan.png">
-            </a>
-            
-            <!--WISATA SUNGAI -->
-            <a href="images/wisata%20sungai.png" data-lightbox="models" data-title="Wisata Sungai_1">
-            <img src="images/wisata%20sungai.png">
-            </a>
-            <a href="images/wisata%20sungai1.png" data-lightbox="models" data-title="Wisata Sungai_2">
-            <img src="images/wisata%20sungai1.png">
-            </a>
-            
         </div>
     </div>
-               
-                  
-   
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script> 
-      <script src="lightbox-plus-jquery.js"></script>      
-             
-     
- 
- <style>
-*{
-margin: auto;
-padding: 0;
-box-sizing: border-box;
-font-family: 'poppons', sans-serif;
-}
 
-     .container{    
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 8%;
-}
-     .gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-    grid-gap: 20px;
-    border-radius: 10px;
-}
-.gallery img{
-    width: 100%;
-    border-radius: 10px;
-}
-             
-                    
-</style> 
-          
-             
-             
-             
-             
+    <div class="container">
+        <div class="nav-filter">
+            <button class="btn-filter active" onclick="filterGallery('all')">Semua Foto</button>
+            <button class="btn-filter" onclick="filterGallery('alam')"><i class="fa fa-mountain"></i> Wisata Alam</button>
+            <button class="btn-filter" onclick="filterGallery('budaya')"><i class="fa fa-masks-theater"></i> Budaya & Event</button>
+        </div>
+
+        <div class="gallery-grid" id="main-gallery">
+            
+            <div class="gallery-item alam">
+                <a href="images/arung-jeram-riam-tinggi.jpg" data-lightbox="wislamanku" data-title="Keseruan Arung Jeram Riam Tinggi">
+                    <img src="images/arung-jeram-riam-tinggi.jpg" alt="Arung Jeram">
+                    <div class="overlay">
+                        <span>Wisata Alam</span>
+                        <h4>Arung Jeram Riam Tinggi</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item budaya">
+                <a href="images/festival-babukung.jpg" data-lightbox="wislamanku" data-title="Festival Babukung - Tari Topeng Lamandau">
+                    <img src="images/festival-babukung.jpg" alt="Babukung">
+                    <div class="overlay">
+                        <span>Budaya</span>
+                        <h4>Festival Babukung</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item alam">
+                <a href="images/bukit%20sebayan%20bunsu.png" data-lightbox="wislamanku" data-title="Pemandangan dari Bukit Sebayan">
+                    <img src="images/bukit%20sebayan%20bunsu.png" alt="Bukit Sebayan">
+                    <div class="overlay">
+                        <span>Wisata Alam</span>
+                        <h4>Bukit Sebayan Bunsu</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item budaya">
+                <a href="images/bagondang.png" data-lightbox="wislamanku" data-title="Prosesi Ritual Bagondang">
+                    <img src="images/bagondang.png" alt="Bagondang">
+                    <div class="overlay">
+                        <span>Budaya</span>
+                        <h4>Ritual Bagondang</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item alam">
+                <a href="images/sei-sitongah.jpg" data-lightbox="wislamanku" data-title="Kejernihan Sei Sitongah">
+                    <img src="images/sei-sitongah.jpg" alt="Sei Sitongah">
+                    <div class="overlay">
+                        <span>Wisata Alam</span>
+                        <h4>Sei Sitongah</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item alam">
+                <a href="images/silikan-tambai.jpg" data-lightbox="wislamanku" data-title="Segarnya Air Terjun Silikan Tambai">
+                    <img src="images/silikan-tambai.jpg" alt="Silikan Tambai">
+                    <div class="overlay">
+                        <span>Wisata Alam</span>
+                        <h4>Air Terjun Silikan Tambai</h4>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="copyright_section">
+        <div class="container">
+            <p>&copy; 2026 Hak Cipta Dinas Pariwisata | Data Resmi Dispar Kabupaten Lamandau</p>
+            <p><small>Dikembangkan oleh Jokoria, S.Kom</small></p>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="lightbox-plus-jquery.js"></script>
+    
+    <script>
+        function filterGallery(category) {
+            // Animasi transisi filter
+            $('.btn-filter').removeClass('active');
+            $(`button[onclick="filterGallery('${category}')"]`).addClass('active');
+
+            if (category === 'all') {
+                $('.gallery-item').show(400);
+            } else {
+                $('.gallery-item').hide();
+                $(`.gallery-item.${category}`).show(400);
+            }
+        }
+    </script>
+</body>
+</html>

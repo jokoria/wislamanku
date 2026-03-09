@@ -1,207 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Wislamanku</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-       <link rel="shortcut icon" href="images/wis.png">
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- owl stylesheets --> 
-      <link rel="stylesheet" href="css/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   </head>
-   <body>
-      <!--header section start -->
-      <div class="header_section">
-         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="Tentang%20Wislamanku.html">Tentang Wislamanku</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                     </li>
-                   
-                  </ul>
-               </div>
-            </nav>
-         </div>
-      </div>
-      <!--header section end -->
-      <!-- banner section start -->
-      <div class="banner_section layout_padding">
-         <div class="container">
-         </div></div>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wislamanku | Pesona Lamandau</title>
+    <link rel="shortcut icon" href="images/wis.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-      
-      <!-- banner section end -->
-      <!-- about section start -->
-      <div class="about_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="about_taital_main">
-                     <div class="about_taital">Tentang Wislamanku</div>
-                      <p class="about_text">Website yang memberikan informasi tempat-tempat wisata yang ada di Kabupaten Lamandau, Seperti Arum Jeram, Sei Situngah, Silikan Tambai dan sebagainya tempat obyek Wisata. </p>
-                      <p class="about_text">Segala Sesuatu Yang Ada Di Daerah Tujuan Wisata Yang Merupakan Daya Tarik Agar Orang-Orang Mau Datang Berkunjung Ke Tempat Tersebut dan Suatu Perjalanan Yang Dilakukan Untuk Rekreasi Atau Liburan Dan Juga Persiapan Yang Dilakukan Untuk Aktivitas Ini..</p>
-                      <p class="about_text">Kabupaten Lamandau Salah Satu Kabupaten Di Provinsi Kalimantan Tengah. Ibu Kota Kabupaten Ini Terletak Di Nanga Bulik. Kabupaten Ini Memiliki Luas Wilayah 6.414,00 Km² Dan Berpenduduk Sebanyak 62.776 Jiwa Dan Bertambah Menjadi 97.610 Jiwa Pada Tahun 2021</p>
-                     
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="about_img"><img src="images/alun-alun.jpg"></div>
-               </div>
+    <style>
+        :root {
+            --primary-color: #1e5128;
+            --accent-color: #27ae60;
+            --light-bg: #f8faf9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: var(--light-bg);
+        }
+
+        /* Navbar Glassmorphism */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Hero Section */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(-45deg, rgba(30, 81, 40, 0.7), rgba(39, 174, 96, 0.5), rgba(0, 0, 0, 0.6));
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            z-index: 1;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Card Style */
+        .gallery-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #fff;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .gallery-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .btn-modern {
+            background: linear-gradient(45deg, var(--accent-color), #16a085);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-modern:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+            color: white;
+        }
+
+        .footer {
+            background: #111;
+            color: #bbb;
+            padding: 60px 0 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success fs-3" href="#">WISLAMANKU</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="Tentang Wislamanku.html">Tentang</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-modern shadow-sm" href="gallery.html">Galeri Foto</a></li>
+                </ul>
             </div>
-         </div>
-      </div>
-      <!-- about section end -->
-      <!-- gallery section start -->
-      <div class="gallery_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-sm-12">
-                  <h1 class="gallery_taital">Tentang Gallery</h1>
-                  <a class="gallery_text1">Salah Satu Contoh Tempat Wisata yang ada di Kabupaten Lamandau</a>
-               </div>
-            </div>
-            <div class="">
-               <div class="gallery_section_2">
-                  <div class="row">
-                     <div class="col-md-4">
-                        <div class="container_main">
-                           <img src="images/arung-jeram-riam-tinggi2.jpg" alt="Avatar" class="image">
-                           <div class="overlay">
-                              <div class="text"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="container_main">
-                           <img src="images/festival-babukung1.jpg" alt="Avatar" class="image">
-                           <div class="overlay">
-                              <div class="text"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4">
-                        <div class="container_main">
-                           <img src="images/Wahana-swafoto.jpg" alt="Avatar" class="image">
-                           <div class="overlay">
-                              <div class="text"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-              
-          
-      <!-- gallery section end -->
-     
-      <!-- testimonial section start -->
-     
-             
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="client_section_2">
-                <div class="container">
-                   <div class="row">
-                      <div class="col-md-12">
-                         <div class="testimonial_section_2">
-                            <h4 class="client_name_text">Riam Arum Jeram <span class="quick_icon"><img src="images/quick-icon.png"></span></h4>
-                            <p class="customer_text">Arung jeram adalah suatu aktifitas pengarungan bagian alur sungai yang berjeram/riam, dengan menggunakan wahana tertentu. Pengertian wahana dalam pengarungan sungai berjeram / riam yaitu sarana / alat yang terdiri dari perahu karet, kayak, kano dan dayung.</p>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="client_section_2">
-                <div class="container">
-                   <div class="row">
-                      <div class="col-md-12">
-                         <div class="testimonial_section_2">
-                            <h4 class="client_name_text">Festival Babukung<span class="quick_icon"><img src="images/quick-icon.png"></span></h4>
-                            <p class="customer_text">Babukung yang merupakan Ritual Kematian umat Kaharingan masyarakat Suku Dayak Tomun di Kabupaten Lamandau. Ritual ini merupakan sebuah rangkaian acara panjang yang dilakukan oleh keluarga dan para kerabat dari orang yang telah meninggal dunia sebelum ia di kuburkan, dengan kata lain Babukung ialah ritual persemayaman Jenazah. </p>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="client_section_2">
-                <div class="container">
-                   <div class="row">
-                      <div class="col-md-12">
-                         <div class="testimonial_section_2">
-                            <h4 class="client_name_text">Wahana Swafoto<span class="quick_icon"><img src="images/quick-icon.png"></span></h4>
-                            <p class="customer_text">Daya Tarik Wisata ini menawarkan keindahan pemandangan serupa negeri di atas awan, panorama sunset dan sunrise yang dapat dinikmati dilokasi yang sama. Adanya spot-spot foto yang menarik menjadi daya tarik untuk wisatawan datang ke tempat wisata ini.</p>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-            </div>
-          </div>
         </div>
-      </div>
-     </div>
-      
-  
-         
-      <!-- footer section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text"><em>Hak Cipta Jokoria, S.Kom / Data Asli dari Dispar Kabupaten Lamandau </em> 
+    </nav>
+
+    <header class="hero">
+        <img src="images/alun-alun.jpg" class="hero-img" alt="Lamandau View">
+        <div class="container hero-content">
+            <h1 class="display-2 fw-bold mb-3">Pesona Alam <br>Kabupaten Lamandau</h1>
+            <p class="lead mb-5 opacity-90">Temukan keajaiban budaya dan petualangan riam di jantung Kalimantan.</p>
+            <a href="#destinasi" class="btn btn-modern btn-lg px-5">Mulai Eksplorasi</a>
+        </div>
+    </header>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h6 class="text-success fw-bold text-uppercase">Gerbang Wisata</h6>
+                    <h2 class="display-5 fw-bold mb-4">Mengenal Lebih Dekat <span class="text-gradient">Lamandau</span></h2>
+                    <p class="text-muted mb-4">Wislamanku hadir sebagai jendela informasi untuk memperkenalkan keindahan alam, budaya, dan kearifan lokal Kabupaten Lamandau kepada dunia.</p>
+                    <div class="d-flex gap-4">
+                        <div>
+                            <h3 class="fw-bold mb-0 text-success">6.4k+</h3>
+                            <small class="text-muted">Luas Wilayah (Km²)</small>
+                        </div>
+                        <div class="vr"></div>
+                        <div>
+                            <h3 class="fw-bold mb-0 text-success">97k+</h3>
+                            <small class="text-muted">Penduduk</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="images/alun-alun.jpg" class="img-fluid rounded-5 shadow-lg" alt="About">
+                        <div class="position-absolute bottom-0 start-0 bg-white p-3 m-3 m-md-4 rounded-4 shadow d-none d-md-block">
+                            <i class="fa fa-map-marker-alt text-success mb-2 fs-4"></i>
+                            <h6 class="mb-0">Nanga Bulik</h6>
+                            <p class="small text-muted mb-0">Ibu Kota Kabupaten</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section id="destinasi" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-6">Destinasi <span class="text-gradient">Terpopuler</span></h2>
+                <p class="text-muted">Pilih jenis petualangan yang Anda inginkan</p>
             </div>
-          </div>
-       </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>     
-   </body>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card gallery-card h-100">
+                        <img src="images/arung-jeram-riam-tinggi2.jpg" class="card-img-top" alt="Arung Jeram">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Riam Arung Jeram</h5>
+                            <p class="small text-muted">Pacu adrenalin Anda dengan menaklukkan arus sungai yang menantang bersama tim profesional.</p>
+                            <a href="arum jeram.html" class="text-success fw-bold text-decoration-none small">Lihat Detail <i class="fa fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card gallery-card h-100">
+                        <img src="images/festival-babukung1.jpg" class="card-img-top" alt="Babukung">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Festival Babukung</h5>
+                            <p class="small text-muted">Saksikan ritual sakral dan tarian topeng unik yang merupakan warisan leluhur Suku Dayak Tomun.</p>
+                            <a href="festival babukung.html" class="text-success fw-bold text-decoration-none small">Lihat Detail <i class="fa fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card gallery-card h-100">
+                        <img src="images/silikan garung.png" class="card-img-top" alt="Silikan Tambai">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Silikan Tambai</h5>
+                            <p class="small text-muted">Rasakan kesegaran air terjun alami dan suasana hutan tropis yang masih sangat asri.</p>
+                            <a href="silikan tambai.html" class="text-success fw-bold text-decoration-none small">Lihat Detail <i class="fa fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card gallery-card h-100">
+                        <img src="images/sei-sitongah.jpg" class="card-img-top" alt="Sei Sitongah">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Sei Sitongah</h5>
+                            <p class="small text-muted">Nikmati ketenangan aliran sungai Delang yang jernih dengan bebatuan alami yang eksotis.</p>
+                            <a href="sei sitongah.html" class="text-success fw-bold text-decoration-none small">Lihat Detail <i class="fa fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card gallery-card h-100">
+                        <img src="images/Balayah-Lanting.jpg" class="card-img-top" alt="Balayah Lanting">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Balayah Lanting</h5>
+                            <p class="small text-muted">Ikuti tradisi Bamboo Rafting menyusuri sungai dalam festival tahunan di Kecamatan Delang.</p>
+                            <a href="balayah lanting.html" class="text-success fw-bold text-decoration-none small">Lihat Detail <i class="fa fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card gallery-card h-100">
+                        <img src="images/Wahana-swafoto.jpg" class="card-img-top" alt="Swafoto">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">Wahana Swafoto</h5>
+                            <p class="small text-muted">Abadikan momen sunrise terbaik di atas "negeri di atas awan" Bukit Lubang Kilat.</p>
+                            <a href="wahana swafoto.html" class="text-success fw-bold text-decoration-none small">Lihat Detail <i class="fa fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4 mb-4">
+                <div class="col-md-6 text-center text-md-start">
+                    <h4 class="text-white fw-bold mb-3">WISLAMANKU</h4>
+                    <p class="small">Platform resmi informasi wisata Kabupaten Lamandau. Mari lestarikan keindahan alam dan budaya Kalimantan Tengah.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25">
+            <div class="text-center mt-4">
+                <p class="small mb-0 text-secondary">&copy; 2026 <strong>Hak Cipta | Jokoria, S.Kom</strong> | Sumber Data: Dispar Kab. Lamandau</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

@@ -1,115 +1,253 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wahana Swafoto</title>
-     <link rel="shortcut icon" href="images/wis.png">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="lightbox.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahana Swafoto | Wislamanku</title>
+    <link rel="shortcut icon" href="images/wis.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <style>
+        :root {
+            --primary: #0277bd; /* Sky Blue */
+            --accent: #f57c00; /* Sunset Orange */
+            --dark: #121212;
+            --text-gray: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f0f7fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Background Moving */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header / Hero Area */
+        .hero-title {
+            padding: 100px 5% 50px;
+            text-align: center;
+            background: linear-gradient(-45deg, #e1f5fe, #fff3e0, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        .hero-title h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero-title p {
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Gallery Container */
+        .container {
+            padding: 20px 8% 60px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .gallery a {
+            position: relative;
+            display: block;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .gallery a:hover {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery a::after {
+            content: "\f03e"; /* Icon Image */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .gallery a:hover::after {
+            opacity: 1;
+        }
+
+        /* Content Area */
+        .content-section {
+            background: white;
+            padding: 80px 15%;
+            line-height: 1.8;
+            border-radius: 50px 50px 0 0;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.03);
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-section em {
+            font-style: normal;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            text-align: justify;
+            display: block;
+        }
+
+        /* Card Khusus Info Pendakian */
+        .info-card {
+            background: #e3f2fd;
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 0 15px 15px 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        /* Navigation Button */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            background: white;
+        }
+
+        .btn-kembali {
+            text-decoration: none;
+            color: white;
+            background: var(--dark);
+            padding: 15px 40px;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-kembali:hover {
+            background: var(--primary);
+            transform: translateX(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            padding: 40px 15%;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 50px 8%; }
+            .info-card { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
-    <body>    
+<body>
+
+    <header class="hero-title">
+        <p>Negeri Di Atas Awan</p>
+        <h1>Bukit Lubang Kilat</h1>
+    </header>
+
     <div class="container">
         <div class="gallery">
-            <a href="images/Wahana-swafoto.jpg" data-lightbox="models" data-title="Slide 1">
-            <img src="images/Wahana-swafoto.jpg">
+            <a href="images/Wahana-swafoto.jpg" data-lightbox="hiking" data-title="Pemandangan Puncak">
+                <img src="images/Wahana-swafoto.jpg" alt="Slide 1">
             </a>
-            <a href="images/Wahana-swafoto1.jpg" data-lightbox="models" data-title="Slide 2">
-            <img src="images/Wahana-swafoto1.jpg">
+            <a href="images/Wahana-swafoto1.jpg" data-lightbox="hiking" data-title="Sunrise di Bukit Lubang Kilat">
+                <img src="images/Wahana-swafoto1.jpg" alt="Slide 2">
             </a>
-            <a href="images/Wahana-swafoto2.jpg" data-lightbox="models" data-title="Slide 3">
-            <img src="images/Wahana-swafoto2.jpg">
+            <a href="images/Wahana-swafoto2.jpg" data-lightbox="hiking" data-title="Spot Foto Instagramable">
+                <img src="images/Wahana-swafoto2.jpg" alt="Slide 3">
             </a>
-            <a href="images/Wahana-swafoto3.jpg" data-lightbox="models" data-title="Slide 4">
-            <img src="images/Wahana-swafoto3.jpg">
-            </a>   
+            <a href="images/Wahana-swafoto3.jpg" data-lightbox="hiking" data-title="Camping Area">
+                <img src="images/Wahana-swafoto3.jpg" alt="Slide 4">
+            </a>
         </div>
     </div>
-        
-    <div class="text">
-        <em>Daya Tarik Wisata ini menawarkan keindahan pemandangan serupa negeri di atas awan, panorama sunset dan sunrise yang dapat dinikmati dilokasi yang sama. Daya Tarik Wisata ini menawarkan keindahan pemandangan serupa negeri di atas awan, panorama sunset dan sunrise yang dapat dinikmati dilokasi yang sama. Adanya spot-spot foto yang menarik menjadi daya tarik untuk wisatawan datang ke tempat wisata ini. Waktu yang dibutuhkan untuk sampai ke puncak bukit yaitu ±30 menit. Terdapat 3 pos pendakian untuk beristirahat yang dibuat swadaya oleh masyarakat sekitar. Selain memiliki spot foto yang menarik, wisatawan juga dapat melakukan camping  di puncak bukit ini.
 
-        Bukit Lubang Kilat berada di Desa Riam Tinggi, Kecamatan Delang, Kabupaten Lamandau. Membutuhkan waktu ± 2 jam dari kota Nanga Bulik menuju Kecamatan Delang melalui jalur darat dengan kondisi jalan yang telah beraspal. Selanjutnya wisatawan harus mendaki untuk mencapai puncak bukit lubang kilat dengan waktu ±30 menit.
+    <section class="content-section">
+        <em>
+            Daya tarik wisata ini menawarkan keindahan pemandangan serupa <strong>"Negeri di Atas Awan"</strong>. Berlokasi di Desa Riam Tinggi, Kecamatan Delang, tempat ini menjadi primadona bagi pemburu panorama <strong>Sunrise</strong> dan <strong>Sunset</strong> yang dapat dinikmati di lokasi yang sama.
+            <br><br>
+            Selain memiliki spot-spot foto yang estetik, puncak bukit ini juga menjadi area favorit untuk kegiatan <strong>Camping</strong>. Untuk mencapai puncak, wisatawan perlu mendaki selama kurang lebih <strong>30 menit</strong>. Perjalanan Anda akan dimudahkan dengan adanya 3 pos pendakian untuk beristirahat yang dibangun secara swadaya oleh masyarakat sekitar.
         </em>
-        </div>
-           
-      <div class="kembali">
-           <a style="text-decoration:none;  color: white; font-family: cursive;" href="index.html"> K e m b a l i </a>
-     </div>
-        
-        <div class="footer">
-          <em>Hak Cipta Jokoria, S.Kom / Data Asli dari Dispar Kabupaten Lamandau</em>
-        </div>
-        
-    <script src="lightbox-plus-jquery.js"></script>
 
-<style>
-*{
-margin: auto;
-padding: 0;
-box-sizing: border-box;
-font-family: 'poppons', sans-serif;
-}
-.text{
-    background-color: ghostwhite;
-    width: 100%;
-    min-height: 40vh;
-    display: flex;
-    text-align: justify;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 15%;
-    font-size: 20px;
-   
-}
-    
-.kembali{
-    background-color: gray;
-    width: 29%;
-    padding: 5px;
-    display: flex;
-    margin-bottom: 20px;
-    text-align: center;
-    border-style: solid;
-    border-radius: 5px;
-    font-size: 20px;
-    justify-content: center;
-    font-weight: bold;
-    text-decoration: none;
-    
-}    
-.footer{
-    background-color: black;
-    width: 100%;
-    min-height: 10vh;
-    display: flex;
-    text-align: justify;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 15%;
-    color: blanchedalmond;
-    font-size: 15px;
-    
-}
-    
-.container{
-    background-color: black;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 8%;
-}
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-    grid-gap: 20px;
-    border-radius: 10px;
-}
-.gallery img{
-    width: 100%;
-    border-radius: 10px;
-}</style>
-       
+        <div class="info-card">
+            <div class="info-icon"><i class="fa fa-cloud-sun"></i></div>
+            <div>
+                <h4 style="color: var(--primary); margin-bottom: 5px;">Tips Pendakian</h4>
+                Dibutuhkan waktu ± 2 jam perjalanan darat dari Nanga Bulik menuju kaki bukit. Pastikan fisik dalam kondisi prima untuk pendakian 30 menit menuju puncak demi mendapatkan momen "Lautan Awan" terbaik di pagi hari.
+            </div>
+        </div>
+    </section>
+
+    <div class="navigation">
+        <a href="index.html" class="btn-kembali">
+            <i class="fa fa-arrow-left"></i> K E M B A L I
+        </a>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Hak Cipta <strong>Jokoria, S.Kom</strong> | Data Resmi Dinas Pariwisata Kab. Lamandau</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'albumLabel': "Foto %1 dari %2"
+        })
+    </script>
 </body>
 </html>

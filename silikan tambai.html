@@ -1,115 +1,253 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silikan Tambai</title>
-	 <link rel="shortcut icon" href="images/wis.png">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="lightbox.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silikan Tambai | Wislamanku</title>
+    <link rel="shortcut icon" href="images/wis.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <style>
+        :root {
+            --primary: #064e3b; /* Hijau Emerald Gelap */
+            --accent: #10b981; /* Hijau Emerald Terang */
+            --dark: #121212;
+            --text-gray: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f0fdf4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Background Moving */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header / Hero Area */
+        .hero-title {
+            padding: 100px 5% 50px;
+            text-align: center;
+            background: linear-gradient(-45deg, #dcfce7, #f0fdf4, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        .hero-title h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero-title p {
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Gallery Container */
+        .container {
+            padding: 20px 8% 60px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .gallery a {
+            position: relative;
+            display: block;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .gallery a:hover {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery a::after {
+            content: "\f8ff"; /* Icon Waterfall/Waves */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .gallery a:hover::after {
+            opacity: 1;
+        }
+
+        /* Content Area */
+        .content-section {
+            background: white;
+            padding: 80px 15%;
+            line-height: 1.8;
+            border-radius: 50px 50px 0 0;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.03);
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-section em {
+            font-style: normal;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            text-align: justify;
+            display: block;
+        }
+
+        /* Card Info Akses & Kebersihan */
+        .info-card {
+            background: #ecfdf5;
+            border-left: 5px solid var(--accent);
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 0 15px 15px 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        /* Navigation Button */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            background: white;
+        }
+
+        .btn-kembali {
+            text-decoration: none;
+            color: white;
+            background: var(--dark);
+            padding: 15px 40px;
+            border-radius: 100px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-kembali:hover {
+            background: var(--primary);
+            transform: translateX(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            padding: 40px 15%;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 50px 8%; }
+            .info-card { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
-    <body>    
+<body>
+
+    <header class="hero-title">
+        <p>Hidden Paradise Desa Penyombaan</p>
+        <h1>Silikan Tambai</h1>
+    </header>
+
     <div class="container">
         <div class="gallery">
-            <a href="images/silikan-tambai.jpg" data-lightbox="models" data-title="Slide 1">
-            <img src="images/silikan-tambai.jpg">
+            <a href="images/silikan-tambai.jpg" data-lightbox="nature" data-title="Pesona Air Terjun Silikan Tambai">
+                <img src="images/silikan-tambai.jpg" alt="Silikan Tambai">
             </a>
-            <a href="images/silikan-tambai1.jpg" data-lightbox="models" data-title="Slide 2">
-            <img src="images/silikan-tambai1.jpg">
+            <a href="images/silikan-tambai1.jpg" data-lightbox="nature" data-title="Aliran Air yang Jernih">
+                <img src="images/silikan-tambai1.jpg" alt="Silikan Tambai 1">
             </a>
-            <a href="images/silikan-tambai2.jpg" data-lightbox="models" data-title="Slide 3">
-            <img src="images/silikan-tambai2.jpg">
+            <a href="images/silikan-tambai2.jpg" data-lightbox="nature" data-title="Hutan Rimbun Sekitar">
+                <img src="images/silikan-tambai2.jpg" alt="Silikan Tambai 2">
             </a>
-            <a href="images/silikan-tambai3.jpg" data-lightbox="models" data-title="Slide 4">
-            <img src="images/silikan-tambai3.jpg">
-            </a>   
+            <a href="images/silikan-tambai3.jpg" data-lightbox="nature" data-title="Kesegaran Wisata Alam">
+                <img src="images/silikan-tambai3.jpg" alt="Silikan Tambai 3">
+            </a>
         </div>
     </div>
-        
-    <div class="text">
-        <em>Silikan Tambai merupakan salah satu objek wisata alam yang berada di Desa Penyombaan, Kecamatan Delang, Kabupaten Lamandau, Provinsi Kalimantan Tengah. Silikan Tambai merupakan salah satu daya tarik wisata dengan objek utamanya berupa air terjun yang dikelilingi hutan rimbun dan asri serta aliran air yang sangat bersih dan sejuk. Air terjun ini memanjakan wisatawan dengan panoramanya yang sangat indah.
-	Pada saat musim liburan, Silikan Tambai sering dikunjungi oleh wisatawan lokal dan mancanegara. Wisatawan yang ingin merasakan kesegaran air di Silikan Tambai diperbolehkan untuk berenang, namun harus tetap menjaga kebersihan di kawasan ini. Akses menuju Desa Penyombaan sudah beraspal dengan waktu tempuh ± 2 jam perjalanan dari Kota Nanga Bulik melalui jalur darat, sedangkan menuju Silikan Tambai yaitu ± 30 menit menggunakan kendaraan roda 2 dari Desa Penyombaan, dilanjutkan dengan berjalan kaki selama ± 15 menit untuk sampai di Silikan Tambai.
 
+    <section class="content-section">
+        <em>
+            Silikan Tambai adalah permata tersembunyi yang terletak di <strong>Desa Penyombaan</strong>, Kecamatan Delang. Objek wisata ini menawarkan kemegahan air terjun yang dikelilingi oleh hutan rimbun nan asri. Aliran airnya yang sangat bersih dan sejuk memberikan pengalaman relaksasi yang luar biasa bagi setiap pengunjung.
+            <br><br>
+            Karena keindahannya, Silikan Tambai menjadi destinasi favorit baik bagi wisatawan lokal maupun mancanegara, terutama saat musim liburan. Wisatawan sangat diperbolehkan untuk <strong>berenang</strong> menikmati kesegaran air terjun ini, dengan catatan wajib menjaga kebersihan kawasan demi kelestarian alam yang tetap terjaga.
         </em>
-        </div>
-           
-      <div class="kembali">
-           <a style="text-decoration:none;  color: white; font-family: cursive;" href="index.html"> K e m b a l i </a>
-     </div>
-        
-        <div class="footer">
-          <em>Hak Cipta Jokoria, S.Kom / Data Asli dari Dispar Kabupaten Lamandau</em>
-        </div>
-        
-    <script src="lightbox-plus-jquery.js"></script>
 
-<style>
-*{
-margin: auto;
-padding: 0;
-box-sizing: border-box;
-font-family: 'poppons', sans-serif;
-}
-.text{
-    background-color: ghostwhite;
-    width: 100%;
-    min-height: 40vh;
-    display: flex;
-    text-align: justify;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 15%;
-    font-size: 20px;
-   
-}
-    
-.kembali{
-    background-color: gray;
-    width: 29%;
-    padding: 5px;
-    display: flex;
-    margin-bottom: 20px;
-    text-align: center;
-    border-style: solid;
-    border-radius: 5px;
-    font-size: 20px;
-    justify-content: center;
-    font-weight: bold;
-    text-decoration: none;
-    
-}    
-.footer{
-    background-color: black;
-    width: 100%;
-    min-height: 10vh;
-    display: flex;
-    text-align: justify;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 15%;
-    color: blanchedalmond;
-    font-size: 15px;
-    
-}
-    
-.container{
-    background-color: black;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 8%;
-}
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
-    grid-gap: 20px;
-    border-radius: 10px;
-}
-.gallery img{
-    width: 100%;
-    border-radius: 10px;
-}</style>
-       
+        <div class="info-card">
+            <div class="info-icon"><i class="fa fa-person-walking-luggage"></i></div>
+            <div>
+                <h4 style="color: var(--primary); margin-bottom: 5px;">Rute Perjalanan</h4>
+                Dari Nanga Bulik, butuh ± 2 jam jalur darat menuju Desa Penyombaan. Dilanjutkan menggunakan kendaraan roda dua selama ± 30 menit, lalu trekking santai berjalan kaki selama ± 15 menit untuk sampai di titik air terjun.
+            </div>
+        </div>
+    </section>
+
+    <div class="navigation">
+        <a href="index.html" class="btn-kembali">
+            <i class="fa fa-arrow-left"></i> K E M B A L I
+        </a>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Hak Cipta <strong>Jokoria, S.Kom</strong> | Data Resmi Dinas Pariwisata Kab. Lamandau</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'albumLabel': "Foto %1 dari %2"
+        })
+    </script>
 </body>
 </html>
